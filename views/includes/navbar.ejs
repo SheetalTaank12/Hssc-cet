@@ -1,0 +1,42 @@
+ <header>
+        <nav>
+            <div class="upper-right" >
+                <img src="/images/cropped_circle_image.png" alt="logo" id="logo">
+                <p id="title">HSSC NOTES</p>
+              </div>
+              
+          
+        
+            <div class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="/notes">Home</a></li>
+                    <li><a href="/notes/about">About</a></li>
+                    <li><a href="/notes/samplenotes">Notes</a></li>
+                    <li><a href="/notes/offers">Offers</a></li>
+                    <li><a href="/notes/reviews">Student Reviews</a></li>
+                    <li><a href="/notes/policy">Policy</a></li>
+                    
+                </ul>
+            </div>
+            <a href="/notes/contact"><button id="nav-join-btn">Contact Us</button></a>
+              
+            <div class="hamburger" id="hamburger">
+                <i class='bx bx-menu' id="menu-icon"></i>
+            </div>
+          
+        </nav>
+
+    </header>
+
+    <script>
+
+        const hamburger = document.getElementById('hamburger');
+const icon = document.getElementById('menu-icon');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        icon.classList.toggle('bx-menu');
+         icon.classList.toggle('bx-x'); // Cross icon
+    });
+    </script>

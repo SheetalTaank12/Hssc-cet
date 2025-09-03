@@ -1,0 +1,50 @@
+<% layout("layouts/boilerplate") %>
+
+
+<section>
+    <a href="/notes" id="homelink"><i class='bx bx-left-arrow-alt'></i>Home</a>
+    <div class="policy">
+    <h2>Non-Refundable Purchase Policy</h2>
+
+   <p class="p1"> We strive to provide high-quality study material to help you succeed in your HSSC preparation. 
+    Before making a purchase, please carefully review the details of the resources provided.</p>
+<ul>
+<li><i class='bx bx-check'></i> All paid resources (PDFs, notes, practice sets, mock tests, etc.) are delivered digitally.</li>
+<hr>
+
+<li><i class='bx bx-check'></i> Once purchased, they cannot be returned, exchanged, or refunded under any circumstances.</li>
+<hr>
+<li><i class='bx bx-check'></i> We encourage you to explore our free resources before making a paid purchase, 
+    so you can be confident about the quality of content.</li>
+<hr>
+<li><i class='bx bx-check'></i> In case of any technical issues with downloads or access, 
+    our support team will assist you promptly to ensure you receive what you paid for.</li>
+
+</ul>
+
+<p class="p2">By completing a purchase, you agree to this non-refundable policy.</p>
+
+</div>
+</section>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  // INTERSECTION OBSERVER for animations
+  const secObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        const headings = entry.target.querySelectorAll('.show-heading');
+        headings.forEach(h => h.classList.add('show'));
+      }
+    });
+  }, { threshold: 0.05 });
+
+  document.querySelectorAll('section').forEach(section => {
+    secObserver.observe(section);
+  });
+
+});
+</script>

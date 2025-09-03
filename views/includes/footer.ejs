@@ -1,0 +1,63 @@
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand footer-show ">
+      <h3 >HSSC NOTES </h3>
+      <p>Committed to Your Success Journey</p>
+      <p>Mobile: 90345XXX004,0794XXXXX</p>
+    </div>
+    
+
+    <div class="footer-links footer-show">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/notes">Home</a></li>
+        <li><a href="/notes/about">About </a></li>
+        <li><a href="/notes/samplenotes">Notes</a></li>
+        <li><a href="/notes/offers"> Offers</a></li>
+        <li><a href="/notes/contact">Contact Us</a></li>
+        <li><a href="/notes/policy">Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-socials footer-show">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 HSSC NOTES. All rights reserved.</p>
+    <p class="created-by"><a href="https://aumtech.solutions/" style="color: #ffc300;">Created by Aum Tech Solution</a> <a href="https://www.instagram.com/aumtechsolution/?igsh=MTJ2eDg1NHVhNWs2Yw%3D%3D#" id="aumtechInsta"><i class="fab fa-instagram"></i></a></p>
+    <p><a href="#">Credits</a></p>
+    <p><a href="https://www.freepik.com">Images by  Freepik</a></p>
+    <p>Photo by <a href="https://unsplash.com/@white_on_white?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Monika Sojčáková</a> on <a href="https://unsplash.com/photos/brown-hardbound-books-on-black-book-S4sEHI2B0dU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+      </p>
+    </div>
+</footer>
+
+<script>
+    
+
+const footerObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+
+const footerContents = document.querySelectorAll('.footer-show');
+
+footerContents.forEach(footer => {
+  footerObserver.observe(footer);
+});
+
+</script>

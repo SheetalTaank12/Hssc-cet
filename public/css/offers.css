@@ -1,0 +1,409 @@
+
+#membership {
+  padding: 4rem 2rem;
+  background-color:#e9f0ff;
+  color: #fff;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.membership-heading {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #0a1f44;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  padding-bottom: 1rem;
+  border-radius: 1.2rem;
+  backdrop-filter: blur(20px);
+  width: 70%;
+}
+
+.membership-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  color: #333;
+  width: 80%;
+   border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(246, 253, 255, 0.8); 
+  width: 80%;
+  
+}
+
+.membership-cards,#downloads {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.membership-card.paid .plan-title{
+  background-color: #cafbff;
+}
+.membership-card.paid {
+  background: linear-gradient(135deg, #0A1F44, rgb(24, 43, 92), #36d1dc);
+  color: #ffffff;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  width: 280px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.membership-card.paid:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(54, 209, 220, 0.4);
+}
+.membership-card.free {
+  background: linear-gradient(135deg, #4a6fa5, #6b8ecb); /* medium blue tones */
+  color: #ffffff;
+  border-radius: 1.2rem;
+  padding: 2rem;
+  width: 280px;
+  box-shadow: 0 6px 16px rgba(10, 31, 68, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.membership-card.free:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(10, 31, 68, 0.35);
+}
+
+
+
+
+.plan-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #0a1f44;
+}
+
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.features li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+.join-btn {
+  padding: 0.8rem 1.5rem;
+  background-color: #ffc300;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.join-btn:hover {
+  background-color: #cc9a00;
+}
+
+.card .plan-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #0A1F44;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background-color: rgba(246, 253, 255, 0.8);
+  height: 70%;
+}
+
+.card .price {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.card .features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.card .features li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+
+ .offer-btns{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+.offer-btn{
+        margin-bottom: 2rem;
+        background-color:  #0a1f44 ;
+        padding: 12px 25px;
+        border-radius: 1.2rem;
+        color: #fff;
+        transition: transform 0.3s ease;
+        transform: scale(1);
+       
+    }
+
+    .offer-btn:hover{
+        transform: scale(1.05);
+    }
+   
+.free-pdf,.paid-pdf{
+    margin-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.free-heading,.paid-heading{
+  margin-bottom: 1.2rem;
+  color: #0a1f44;
+  font-size: 2rem;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 195, 0, 0.5); 
+  width: 60%;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.policylink{
+    margin-bottom: 2rem;
+}
+
+
+/* Email Input */
+#userEmail {
+  width: 100%;
+  
+  padding: 12px 16px;
+  margin: 16px 0;
+  font-size: 16px;
+  border: 2px solid #0a1f44; /* dark blue border matching your premium card */
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+#userEmail::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+#userEmail:focus {
+  border-color: #cc7100; /* highlight border on focus */
+  box-shadow: 0 0 8px rgba(204, 113, 0, 0.4); /* subtle glow effect */
+}
+
+.line{
+  background-color: #000;
+  height: 1px;
+  width: 90%;
+  margin-bottom: 1rem;
+}
+
+
+#userlabel{
+  color: #0a1f44;
+  margin-bottom: 0.6rem;
+}
+
+#alreadypaid{
+  color: #cc7900;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+#downloads h3, #downloads p{
+  color: #0A1F44;
+}
+
+.paid-preview{
+  border-radius: 12px;
+  padding: 20px;
+  background: linear-gradient(to bottom right, #0a1f44, #142a5a, #1f3b73, #2a4d8c);
+
+  width: 100vw;
+  
+}
+.paid-preview ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.paid-preview ul li i {
+  background-color: rgb(19, 210, 19);
+    border-radius: 1rem;
+    color: #fff;
+}
+@media (max-width: 768px){
+  .paid-preview ul{
+    gap: 0.9rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .line{
+    width: 100%;
+  }
+
+  #userEmail{
+    width: 80%;
+  }
+
+    .membership-cards, #downloads {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .membership-heading {
+   font-size: 1.7rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  margin-top: 3rem;
+  }
+  .membership-subtext{
+    font-size: 1rem;
+    padding: 0.6rem;
+    margin-bottom: 1.6rem;
+  }
+
+
+  
+.plan-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.basic .price {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.features li {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+.card .plan-title {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  
+}
+
+.card .price {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  
+}
+
+.card .features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.card .features li {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.offer-btn{
+    padding: 0.8rem;
+    font-size: 0.9rem;
+}
+
+
+.free-heading,.paid-heading{
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  border-radius: 12px;
+  padding: 10px;
+  width: 70%;
+  margin-top: 1rem;
+  
+}
+
+
+.membership-card.paid {
+  padding: 1.4rem;
+  width: 80%;
+}
+
+.membership-card.free {
+  padding: 1.4rem;
+  width: 100%;
+}
+
+
+.plan-title {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+
+}
+
+.basic .price {
+  font-size: 0.9rem;
+  margin-bottom: 0.9rem;
+
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.features li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #222;
+}
+
+
+.card .plan-title {
+  font-size: 1rem;
+  
+}
+
+.card .price {
+  font-size: 0.9rem;
+  margin-bottom: 0.9rem;
+  
+}
+
+
+
+}

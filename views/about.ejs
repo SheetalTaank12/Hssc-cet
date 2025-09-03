@@ -1,0 +1,120 @@
+<% layout("layouts/boilerplate") %>
+  <section>
+    <a href="/notes" id="homelink"><i class='bx bx-left-arrow-alt'></i>Home</a>
+  <div class="about-notespedia">
+    <div class="abt-content">
+      <h2>Make Your Dream Job in HSSC CET & Haryana Police a Reality</h2>
+      <p class="maintxt">
+        We provide you one-stop destination for high-quality, well-organized study notes
+        across all subjects for HSSC CET Group D, Group C and Haryana Police. Our mission is to help students prepare smarter, not harder.
+      </p>
+      <img src="https://res.cloudinary.com/dgxl7pkj4/image/upload/v1756650914/about-page-img_oz1irz.jpg">
+      <p class="sbtxt">
+        Whether you are aiming to crack competitive exams or improve your academic performance,
+        NotesPedia provides easy-to-read notes, practice tips, and curated resources to boost your learning.
+      </p>
+
+    </div>
+    <div class="features">
+      <hr>
+        <ul class="about-features">
+        <li><i class='bx bx-check'></i> 100% Accurate and Reliable Notes</li>
+        <li><i class='bx bx-star'></i> Simplified Concepts for Quick Learning</li>
+        <li><i class='bx bx-time'></i> Access Anytime, Anywhere</li>
+        <li><i class='bx bx-user'></i> Trusted by Over 30,000 Students</li>
+      </ul>
+    </div>
+  </div>
+   </section>
+      
+<section>
+    <div class="about-vdo">
+     <video style="width: 800px; height: 500px;" controls autoplay muted>
+  <source src="https://res.cloudinary.com/dgxl7pkj4/video/upload/v1756650571/vdo2_qmt6eq.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+    </div>
+    </section>
+
+
+
+    <section>
+
+    <div class="mission">
+        <h2>OUR MISSION</h2>
+        <p class="mission-subtext">“Our mission is to empower students to achieve academic success through well-structured,
+             easy-to-understand notes, saving time and boosting confidence.”</p>
+            <div class="points">
+                <div class="point">
+                  <i class='bx bx-check'></i>
+                    Accuracy & Reliability
+                </div>
+                <div class="point">
+                  <i class='bx bx-check'></i>
+                    Simplicity & Clarity
+                </div>
+                <div class="point">
+                  <i class='bx bx-check'></i>
+                    Accessibility
+                </div>
+                <div class="point">
+                  <i class='bx bx-check'></i>
+                    Student-first Approach
+                </div>
+            </div>
+    </div>
+
+    </section>
+
+
+    <section>
+
+    <div class="highlight-pts">
+        <div class="hlpt">
+            <div class="hlicon"><i class='bx bx-smile'></i></div>
+            <p>30,000+ happy students</p>
+        </div>
+        <div class="hlpt">
+            <div class="hlicon"><i class='bx bx-book'></i></div>
+             <p>50+ subjects covered</p>
+        </div>
+        <div class="hlpt">
+            <div class="hlicon"><i class='bx bx-download'></i></div>
+             <p>1M+ notes downloaded</p>
+        </div>
+    </div>
+
+    </section>
+   
+ 
+
+<script>
+
+
+
+    
+document.addEventListener("DOMContentLoaded", () => {
+
+
+const secObserver = new IntersectionObserver((entries,observer)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+
+            // all headings inside it
+      const headings = entry.target.querySelectorAll('.show-heading');
+      headings.forEach(h => h.classList.add('show'));
+
+        
+        }
+    });
+}, {
+  threshold: 0.05 
+});
+document.querySelectorAll('section').forEach(section=>{
+    secObserver.observe(section);
+});
+
+
+});
+</script>

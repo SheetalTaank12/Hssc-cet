@@ -1,0 +1,57 @@
+<!--boilerplate code is used becoz we want that all pages of our 
+websites look almost similar styled, it is created once and used everywhere-->
+<!--so this will be displayed over many pages of same website, can
+ be used to design navbar,footer like things one time and use on every page-->
+ <!--AND THIS IS POSSIBLE WITH EJS-MATE , not necessary to use it, we can make same functionality 
+ using other methods also, but in this project we wil be using ejs mate-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/images/cropped_circle_image.png" type="image/png">
+    <title>HSSC-CET</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/about.css"/>
+    <link rel="stylesheet" href="/css/notes.css"/>
+    <link rel="stylesheet" href="/css/reviews.css"/>
+    <link rel="stylesheet" href="/css/homelink.css"/>
+    <link rel="stylesheet" href="/css/offers.css"/>
+    <link rel="stylesheet" href="/css/policy.css"/>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" 
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+    <%- include("../includes/navbar.ejs")  %>
+   
+    <div class="container">
+
+      
+       <%- body || "NO BODY FOUND" %>
+      <!-- this will be replaced by the view content -->
+    
+    
+    </div> 
+
+      <%- include("../includes/footer.ejs")  %>
+
+  
+
+</body>
+</html>
