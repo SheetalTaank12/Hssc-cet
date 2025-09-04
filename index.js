@@ -16,5 +16,3 @@ connectDB().then(() => {
 });
 
 
-//sheetaltaank23_db_user
-//80OuBN7FUhgPxIe3

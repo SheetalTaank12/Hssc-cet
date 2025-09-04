@@ -256,4 +256,47 @@ app.post("/check-purchase", async (req, res) => {
 });
 
 
+
+
+
+// Handle contact form submission
+app.post("/send-message", async (req, res) => {
+  try {
+    const { name, email, phone, subject, message, "inquiry-type": inquiryType } = req.body;
+
+    // Create transporter
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER, // your Gmail
+        pass: process.env.EMAIL_PASS  // your App Password (not Gmail password)
+      }
+    });
+
+    // Email content
+    const mailOptions = {
+      from: email,
+      to: "hssccetnotes@gmail.com", // your receiving email
+      subject: `📩 New Contact Form Message - ${subject || "No subject"}`,
+      html: `
+        <h3>You got a new inquiry</h3>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Phone:</b> ${phone || "N/A"}</p>
+        <p><b>Inquiry Type:</b> ${inquiryType}</p>
+        <p><b>Message:</b><br>${message}</p>
+      `
+    };
+
+    await transporter.sendMail(mailOptions);
+
+    res.json({ success: true, message: "Message sent successfully!" });
+  } catch (err) {
+    console.error("Error sending email:", err);
+    res.status(500).json({ success: false, message: "Failed to send message." });
+  }
+});
+
+
+
 module.exports = app;
