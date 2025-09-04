@@ -8,79 +8,15 @@
   </p>
 
   <div class="offer-btns">
-    <a href="#free-pdf"><button class="offer-btn">Browse Free Resources</button></a>
-    <a href="#paid-pdf"><button class="offer-btn">Get Premium Study Material</button></a>
+    <a href="/notes/free-pdf"><button class="offer-btn">Browse Free Resources</button></a>
+    <a href="#paid-pdf-btn"><button class="offer-btn">All Subject Notes - Rs 299 Only!</button></a>
   </div>
 
   <a href="/notes/policy" class="policylink">Note: Purchases are final and non-refundable. Learn More <i class='bx bx-link-external'></i></a>
 
-  <!-- Free PDFs -->
-  <div class="free-pdf" id="free-pdf">
-    <h2 class="free-heading">Start Learning Free</h2>
-    <div class="membership-cards">
-      <div class="membership-card card free"> 
-        <h2 class="plan-title">Computer Chapterwise Solved Papers(Hindi Medium) </h2> 
-        <p class="price">Access for FREE</p> 
-        <a href="/download/free/Computer Chapterwise Solved Papers (Hindi Medium).pdf">
-          <button class="join-btn">Download PDF</button></a> 
-        </div> 
-        
-        <div class="membership-card card free">
-           <h2 class="plan-title">RRB General Science Solved Papers </h2> 
-           <p class="price">Access for FREE</p> 
-           <a href="/download/free/YCT_RRB_GS_2024_TCS_Pattern_Chapterwise_Typewise_Solved_Paper_s.pdf">
-            <button class="join-btn">Download PDF</button></a> 
-          </div>
 
-           <div class="membership-card card free">
-             <h2 class="plan-title">Haryana Constable Group C GD PYQS</h2> 
-             <p class="price">Access for FREE</p>
-              <a href="/download/free/HARYANA_CONSTABLE_GROUP_C_GD_MALE_&_FEMALE_SOLVED_PAPERS.pdf">
-                <button class="join-btn">Download PDF</button></a> 
-              </div> 
-              
-              <div class="membership-card card free"> 
-                <h2 class="plan-title">Haryana GK 2024 Chapterwise Solved Papers </h2> 
-                <p class="price">Access for FREE</p>
-                 <a href="/download/free/HARYANA_GK 2024 _OBJECTIVE_CHAPTER_WISE_SOLVED_PAPERS_by.pdf">
-                  <button class="join-btn">Download PDF</button>
-                </a>
-               </div> 
-               
-               <div class="membership-card card free">
-               <h2 class="plan-title">HCET Group C&D PYQs </h2>
-               <p class="price">Access for FREE</p> 
-               <a href="/download/free/HCET Group C&D pyqs.pdf">
-            <button class="join-btn">Download PDF</button></a>
-           </div> 
-           
-           <div class="membership-card card free"> 
-            <h2 class="plan-title">HSSC General Hindi & English </h2> 
-            <p class="price">Access for FREE</p>
-             <a href="/download/free/HSSC General Hindi General English Volume II 2025.pdf">
-            <button class="join-btn">Download PDF</button></a> 
-          </div> 
-          
-          <div class="membership-card card free"> 
-            <h2 class="plan-title">HSSC Volume I General Awareness </h2>
-             <p class="price">Access for FREE</p> 
-             <a href="/download/free/HSSC Volume I 2025 General Awareness.pdf">
-              <button class="join-btn">Download PDF</button>
-            </a> </div> <div class="membership-card card free">
-               <h2 class="plan-title">Maths Chapterwise Solved Papers(Hindi Medium) </h2> 
-              <p class="price">Access for FREE</p> 
-              <a href="/download/free/Maths Chapterwise Solved Papers(Hindi Medium).pdf">
-              <button class="join-btn">Download PDF</button></a>
-             </div> 
-             <div class="membership-card card free">
-               <h2 class="plan-title">Railway General Awareness </h2> 
-              <p class="price">Access for FREE</p> <a href="/download/free/Speedy railway samanya adhyan.pdf">
-            <button class="join-btn">Download PDF</button></a> 
-          </div>
-    </div>
-  </div>
- <div class="line"></div>
-  <!-- Paid PDFs -->
+
+
   <div class="paid-pdf" id="paid-pdf">
     <h2 class="paid-heading">Unlock Premium Access</h2>
 
@@ -108,29 +44,40 @@
     
 
     <!-- Collect user email -->
-     <div>
+     <div id="paid-pdf-btn">
      <label for="userEmail" id="userlabel">Enter Your Email to Purchase Premium Notes :</label>
     <input type="email" id="userEmail" placeholder="Enter your email" required>
+    <p id="purchaseMessage" style="display:none;"></p>
     </div>
-     
-    <div>
-    <p id="alreadypaid">Already Paid ? Find Your Notes Here :</p>
-    <a href="#downloads"><button id="fetchPurchasesBtn" class="offer-btn">Show My Purchases</button></a>
-    </div>
-
+   
     <div class="membership-cards">
       <div class="membership-card card paid">
-        <h2 class="plan-title">Get Complete Access to Premium Notes - ALL SUBJECTS! (Hindi medium)</h2>
+        <h2 class="plan-title" >Get Complete Access to Premium Notes - ALL SUBJECTS! (Hindi medium)</h2>
         <p class="price">₹299 only</p>
         <button class="join-btn" onclick="buyNowBundle()">Pay & Get All PDFs</button>
       </div>
     </div>
+
+      
+    <div>
+    <p id="alreadypaid">Already Paid ? Find Your Notes Here :</p>
+    <a><button id="fetchPurchasesBtn" class="offer-btn">Show My Purchases</button></a>
+    </div>
+
     
     <div class="line"></div>
     <div id="downloads">
       
     </div>
   </div>
+
+
+
+
+
+  
+  <!-- Paid PDFs -->
+  
 </section>
 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -165,18 +112,54 @@ document.querySelectorAll('section').forEach(section=>{
 });
 
 </script>
-<script>
-function buyNowBundle() {
-  const email = document.getElementById("userEmail").value;
-  if(!email) return alert("Please enter your email");
 
-  fetch("/create-order", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ amount: 299*100 })
-  })
-  .then(res => res.json())
-  .then(order => {
+
+<script>
+async function buyNowBundle() {
+  const email = document.getElementById("userEmail").value.trim();
+  const msg = document.getElementById("purchaseMessage");
+
+  if (!email) {
+    alert("Please enter your email");
+    return;
+  }
+
+  try {
+    // 1️⃣ Check if user already purchased
+    const checkRes = await fetch("/check-purchase", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    const checkData = await checkRes.json();
+
+    if (checkData.purchased) {
+      // Already purchased → show message instead of Razorpay
+      msg.textContent = "✅ You have already purchased. Click 'Show My Purchases' to access your PDFs.";
+      msg.style.display = "block";
+      msg.scrollIntoView({ behavior: "smooth" });
+
+      // hide after  seconds
+  setTimeout(() => {
+    msg.style.display = "none";
+  }, 11000);
+
+
+      return; // stop here, do not open Razorpay
+    }
+    
+
+    
+
+
+    // 2️⃣ Otherwise continue with Razorpay order creation
+    const orderRes = await fetch("/create-order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ amount: 299 * 100 }),
+    });
+    const order = await orderRes.json();
+
     const options = {
       key: "<%= RAZORPAY_KEY_ID %>",
       amount: order.amount,
@@ -184,18 +167,20 @@ function buyNowBundle() {
       order_id: order.id,
       name: "My Notes Store",
       description: "Purchase Premium Notes",
-      handler: async function(response) {
+      handler: async function (response) {
         const verifyRes = await fetch("/verify-payment", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({...response, email})
+          body: JSON.stringify({ ...response, email }),
         });
         const data = await verifyRes.json();
-        if(data.success) {
-          const downloadsDiv = document.getElementById("downloads");
-          downloadsDiv.innerHTML = "<h3>✅ Payment Success! Download your PDFs:</h3><p><i>Check Links Sent To Your Email For Future Access.</i></p>";
 
-          data.files.forEach(file => {
+        if (data.success) {
+          const downloadsDiv = document.getElementById("downloads");
+          downloadsDiv.innerHTML =
+            "<h3>✅ Payment Success! Download your PDFs:</h3><p><i>Check Links Sent To Your Email For Future Access.</i></p>";
+
+          data.files.forEach((file) => {
             const card = document.createElement("div");
             card.className = "membership-card card paid";
 
@@ -207,7 +192,8 @@ function buyNowBundle() {
             const btn = document.createElement("button");
             btn.className = "join-btn";
             btn.innerText = "Download";
-            btn.onclick = () => window.location.href = `/download/paid/${data.purchaseId}/${file}`;
+            btn.onclick = () =>
+              (window.location.href = `/download/paid/${data.purchaseId}/${file}`);
             card.appendChild(btn);
 
             downloadsDiv.appendChild(card);
@@ -215,11 +201,14 @@ function buyNowBundle() {
         } else {
           alert("❌ Payment verification failed!");
         }
-      }
+      },
     };
+
     new Razorpay(options).open();
-  })
-  .catch(err => console.error("Order creation error:", err));
+  } catch (err) {
+    console.error("Error:", err);
+    alert("Something went wrong!");
+  }
 }
 </script>
 
@@ -269,4 +258,21 @@ async function fetchPurchases() {
 document.getElementById("fetchPurchasesBtn").addEventListener("click", fetchPurchases);
 
 
+</script>
+
+
+
+
+<script>
+  document.getElementById("fetchPurchasesBtn").addEventListener("click", function () {
+    const email = document.getElementById("userEmail").value.trim();
+
+    if (email) {
+      // If email entered → scroll to downloads
+      document.getElementById("downloads").scrollIntoView({ behavior: "smooth" });
+    } else {
+      // If no email → scroll to email input section
+      document.getElementById("userlabel").scrollIntoView({ behavior: "smooth" });
+    }
+  });
 </script>

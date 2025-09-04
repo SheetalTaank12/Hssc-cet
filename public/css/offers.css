@@ -69,6 +69,9 @@
   width: 280px;
   box-shadow: 0 6px 16px rgba(10, 31, 68, 0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .membership-card.free:hover {
@@ -185,6 +188,19 @@
   margin-top: 2rem;
   text-align: center;
 }
+.free-heading{
+  margin-top: 6rem;
+}
+
+
+#purchaseMessage{
+  background-color: red;
+  color: white;
+  height: 200px;
+  width: 100%;
+  padding-top: 6rem;
+  font-weight: 600;
+}
 
 .policylink{
     margin-bottom: 2rem;
@@ -288,6 +304,7 @@
     font-size: 1rem;
     padding: 0.6rem;
     margin-bottom: 1.6rem;
+    width: 100%;
   }
 
 
@@ -346,7 +363,7 @@
 }
 
 
-.free-heading,.paid-heading{
+.paid-heading{
   margin-bottom: 1rem;
   font-size: 1.3rem;
   border-radius: 12px;
@@ -354,6 +371,15 @@
   width: 70%;
   margin-top: 1rem;
   
+}
+.free-heading{
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  border-radius: 12px;
+  padding: 10px;
+  width: 70%;
+  margin-top: 5.4rem;
+
 }
 
 
@@ -364,7 +390,8 @@
 
 .membership-card.free {
   padding: 1.4rem;
-  width: 100%;
+  width: 80%;
+  
 }
 
 

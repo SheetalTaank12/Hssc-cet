@@ -1,6 +1,7 @@
 // app.js - handles routes + free + paid (with Razorpay) downloads
 const express = require("express");
 const path = require("path");
+const fs = require("fs");
 const ejsMate = require("ejs-mate");
 const bodyParser = require("body-parser");
 const Razorpay = require("razorpay");
@@ -75,10 +76,28 @@ app.get("/notes/policy", (req, res) => {
   catch (err) { console.error(err); res.status(500).send("Error loading page"); }
 });
 
+
+app.get("/notes/free-pdf",(req,res)=>{
+
+  try { res.render("freepdf.ejs"); }
+  catch (err) { console.error(err); res.status(500).send("Error loading page"); }
+
+});
+
 // ---------- FREE DOWNLOADS ----------
 app.get("/download/free/:filename", (req, res) => {
   const filePath = path.join(__dirname, "public", "free", req.params.filename);
-  res.download(filePath, err => err && res.status(500).send("File not found."));
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).send("Free file not found.");
+  }
+
+  res.download(filePath, err => {
+    if (err) {
+      console.error("Free file download error:", err);
+      res.status(500).send("Error downloading free file.");
+    }
+  });
 });
 
 // ---------- PAID PDFS ----------
@@ -179,11 +198,26 @@ app.get("/download/paid/:purchaseId/:filename", async (req, res) => {
   try {
     const { purchaseId, filename } = req.params;
     const purchase = await Purchase.findById(purchaseId);
-    if (!purchase || !purchase.files.includes(filename)) return res.status(403).send("Unauthorized or file not found");
-    const filePath = path.join(__dirname, "public", "paid", filename);
-    res.download(filePath, err => err && res.status(500).send("File not found."));
+
+    if (!purchase || !purchase.files.includes(filename)) {
+      return res.status(403).send("Unauthorized or file not found.");
+    }
+
+    // ✅ NEW: files are now in files/paid/
+    const filePath = path.join(__dirname, "files", "paid", filename);
+
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).send("Paid file not found on server.");
+    }
+
+    res.download(filePath, err => {
+      if (err) {
+        console.error("Paid file download error:", err);
+        res.status(500).send("Error downloading paid file.");
+      }
+    });
   } catch (err) {
-    console.error("Paid download error:", err);
+    console.error("Paid download route error:", err);
     res.status(500).send("Internal server error");
   }
 });
@@ -200,6 +234,23 @@ app.get("/get-purchases", async (req, res) => {
     res.json({ purchases });
   } catch (err) {
     console.error("Error fetching purchases:", err);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+
+
+//check if email already exists in db
+app.post("/check-purchase", async (req, res) => {
+  const { email } = req.body;
+  try {
+    const purchase = await Purchase.findOne({ email: email });
+    if (purchase) {
+      res.json({ purchased: true });
+    } else {
+      res.json({ purchased: false });
+    }
+  } catch (err) {
     res.status(500).json({ error: "Server error" });
   }
 });

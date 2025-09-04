@@ -1,0 +1,105 @@
+<% layout("layouts/boilerplate") %>
+
+<section>
+
+<a href="/notes" id="homelink"><i class='bx bx-left-arrow-alt'></i>Home</a>
+    <!-- Free PDFs -->
+  <div class="free-pdf" id="free-pdf">
+    <h2 class="free-heading">Start Learning Free</h2>
+    <div class="membership-cards">
+      <div class="membership-card card free"> 
+        <h2 class="plan-title">Computer Chapterwise Solved Papers(Hindi Medium) </h2> 
+        <p class="price">Access for FREE</p> 
+        <a href="/download/free/Computer Chapterwise Solved Papers (Hindi Medium).pdf">
+          <button class="join-btn">Download PDF</button></a> 
+        </div> 
+        
+        <div class="membership-card card free">
+           <h2 class="plan-title">RRB General Science Solved Papers </h2> 
+           <p class="price">Access for FREE</p> 
+           <a href="/download/free/YCT_RRB_GS_2024_TCS_Pattern_Chapterwise_Typewise_Solved_Paper_s.pdf">
+            <button class="join-btn">Download PDF</button></a> 
+          </div>
+
+           <div class="membership-card card free">
+             <h2 class="plan-title">Haryana Constable Group C GD PYQS</h2> 
+             <p class="price">Access for FREE</p>
+              <a href="/download/free/HARYANA_CONSTABLE_GROUP_C_GD_MALE_&_FEMALE_SOLVED_PAPERS.pdf">
+                <button class="join-btn">Download PDF</button></a> 
+              </div> 
+              
+              <div class="membership-card card free"> 
+                <h2 class="plan-title">Haryana GK 2024 Chapterwise Solved Papers </h2> 
+                <p class="price">Access for FREE</p>
+                 <a href="/download/free/HARYANA_GK 2024 _OBJECTIVE_CHAPTER_WISE_SOLVED_PAPERS_by.pdf">
+                  <button class="join-btn">Download PDF</button>
+                </a>
+               </div> 
+               
+               <div class="membership-card card free">
+               <h2 class="plan-title">HCET Group C&D PYQs </h2>
+               <p class="price">Access for FREE</p> 
+               <a href="/download/free/HCET Group C&D pyqs.pdf">
+            <button class="join-btn">Download PDF</button></a>
+           </div> 
+           
+           <div class="membership-card card free"> 
+            <h2 class="plan-title">HSSC General Hindi & English </h2> 
+            <p class="price">Access for FREE</p>
+             <a href="/download/free/HSSC General Hindi General English Volume II 2025.pdf">
+            <button class="join-btn">Download PDF</button></a> 
+          </div> 
+          
+          <div class="membership-card card free"> 
+            <h2 class="plan-title">HSSC Volume I General Awareness </h2>
+             <p class="price">Access for FREE</p> 
+             <a href="/download/free/HSSC Volume I 2025 General Awareness.pdf">
+              <button class="join-btn">Download PDF</button>
+            </a> </div> <div class="membership-card card free">
+               <h2 class="plan-title">Maths Chapterwise Solved Papers(Hindi Medium) </h2> 
+              <p class="price">Access for FREE</p> 
+              <a href="/download/free/Maths Chapterwise Solved Papers(Hindi Medium).pdf">
+              <button class="join-btn">Download PDF</button></a>
+             </div> 
+             <div class="membership-card card free">
+               <h2 class="plan-title">Railway General Awareness </h2> 
+              <p class="price">Access for FREE</p> <a href="/download/free/Speedy railway samanya adhyan.pdf">
+            <button class="join-btn">Download PDF</button></a> 
+          </div>
+    </div>
+  </div>
+ <div class="line"></div>
+
+
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+
+const secObserver = new IntersectionObserver((entries,observer)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+
+            // all headings inside it
+      const headings = entry.target.querySelectorAll('.show-heading');
+      headings.forEach(h => h.classList.add('show'));
+
+        
+        }
+    });
+}, {
+  threshold: 0.05 
+});
+document.querySelectorAll('section').forEach(section=>{
+    secObserver.observe(section);
+});
+
+
+
+});
+
+
+
+</script>
